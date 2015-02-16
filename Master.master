@@ -1,0 +1,171 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Master.master.cs" Inherits="mainPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Nav templet</title>
+    <meta name="viewport" content="width=device-width, initial-width=1" />
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <link href="main.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+   
+</head>
+<body>
+    
+        <form id="form1" runat="server">
+    
+        <div class="container top">
+           &nbsp;<nav class="navbar"  role="navigation">
+                  <ul class="Social " id="fadeshow1">
+                    <li> <a href="WWW.facebook.com">Facebook</a>&nbsp;&nbsp; </li> 
+                    <li> <a href="WWW.facebook.com">Twitter</a>&nbsp;&nbsp;&nbsp;&nbsp; </li> 
+                    <li> <a href="ShoppingCart.aspx">Help</a>&nbsp;&nbsp;&nbsp; </li> 
+                    <li> <a href="Login.aspx">Login</a></li> 
+                  </ul>
+                    <div class="carttop">
+                        <a href="ShoppingCart.aspx"><img src="images/cart.png" alt="cart" class="cartimg"/></a>
+                       <!-- <asp:GridView ID="GridView1" runat="server" CssClass="cartgrid" AutoGenerateColumns="False" DataSourceID="SqlDatacart">
+                            <Columns>
+                                <asp:TemplateField HeaderText="ORDERTOTAL" SortExpression="ORDERTOTAL">
+                                    <EditItemTemplate>
+                                        <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("ORDERTOTAL") %>'></asp:TextBox>
+                                    </EditItemTemplate>
+                                    <ItemTemplate>
+                                        <asp:Label ID="Label1" runat="server" Text='<%# Bind("ORDERTOTAL") %>' ></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                            </Columns>
+                        </asp:GridView>-->
+                        <asp:SqlDataSource ID="SqlDatacart" runat="server" ConnectionString="<%$ ConnectionStrings:OracleConnection %>" ProviderName="<%$ ConnectionStrings:OracleConnection.ProviderName %>" SelectCommand="SELECT &quot;ORDERTOTAL&quot; FROM &quot;SHOPPINGCART&quot; WHERE (&quot;CARTID&quot; = :CARTID)">
+                            <SelectParameters>
+                                <asp:Parameter DefaultValue="1" Name="CARTID" Type="String" />
+                            </SelectParameters>
+                        </asp:SqlDataSource>
+                    </div>
+            <a href="main.aspx"><img alt="logo" class="img-responsive logoimg" id="adjustimg" src="images/book_outlet_logo.png" /></a></nav>
+            <nav>
+            <ul  class="nav nav-pills" >
+                <li><a href="newarrival.aspx">New Arrivals</a></li>
+                <li><a href="/Store/Browse/scratch-dent/_/N-3320">Scratch/Dent</a></li>
+                <li><a href="/Store/Browse/tweens-young-adult/_/N-3656">Tweens/YA</a></li>
+                <li><a href="/Store/Browse/kids/_/N-3294">Kids</a></li>
+                <li><a href="/Store/FiftyFifty">50/50</a></li>
+                <li><a href="CategoryList.aspx">Categories</a></li>
+                <li><a href="/Store/OtherBrowsing">Other</a></li>
+        </ul>    
+            </nav>
+        </div>
+   <div>
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+            <p>
+                &nbsp;</p>
+        
+        </asp:ContentPlaceHolder>
+    </div>
+
+    <!--<div class="container-fluid footer">
+        <div class="row">
+
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                <h4>Products</h4>
+                <ol class="list-unstyled">
+                    <li><a href="#">New Arrivals</a></li>
+                    <li><a href="#">Scratch/Dent</a></li>
+                    <li><a href="#">Tweens/Ya</a></li>
+                    <li><a href="#">Kids</a></li>
+                    <li><a href="#">50/50</a></li>
+                    <li><a href="#">Caategories</a></li>
+                    <li><a href="#">Other</a></li>
+                </ol>
+            </div>
+            
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                <h4>Products</h4>
+                <ol class="list-unstyled">
+                    <li><a href="#">New Arrivals</a></li>
+                    <li><a href="#">Scratch/Dent</a></li>
+                    <li><a href="#">Tweens/Ya</a></li>
+                    <li><a href="#">Kids</a></li>
+                    <li><a href="#">50/50</a></li>
+                    <li><a href="#">Caategories</a></li>
+                    <li><a href="#">Other</a></li>
+                </ol>
+            </div>
+
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                <h4>Products</h4>
+                <ol class="list-unstyled">
+                    <li><a href="#">New Arrivals</a></li>
+                    <li><a href="#">Scratch/Dent</a></li>
+                    <li><a href="#">Tweens/Ya</a></li>
+                    <li><a href="#">Kids</a></li>
+                    <li><a href="#">50/50</a></li>
+                    <li><a href="#">Caategories</a></li>
+                    <li><a href="#">Other</a></li>
+                </ol>
+            </div>
+
+        </div>
+    </div>-->
+
+    <div class="container-fluid footer">
+
+        <div class="row">
+
+            <div class="col-xs-2 col-sm-2 col-md-2 col-md-offset-1 col-lg-2 col-lg-offset-1">
+            </div>
+
+            <div class="col-xs-5 col-sm-3 col-md-2 col-lg-2">
+                <h4>PRODUCTS</h4>
+                <ol class="list-unstyled">
+                    <li><a href="#">New Arrivals</a></li>
+                    <li><a href="#">Scratch/Dent</a></li>
+                    <li><a href="#">Tweens/Ya</a></li>
+                    <li><a href="#">Kids</a></li>
+                    <li><a href="#">50/50</a></li>
+                    <li><a href="#">Categories</a></li>
+                    <li><a href="#">Other</a></li>
+                </ol>
+            </div>
+
+            <div class="col-xs-5 col-sm-3 col-md-2 col-lg-2">
+                <h4>HELP</h4>
+                <ol class="list-unstyled">
+                    <li><a href="#">Ordering</a></li>
+                    <li><a href="#">Shipping</a></li>
+                    <li><a href="#">Our Product</a></li>
+                    <li><a href="#">Customer Service</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Subscribe To Newsletter</a></li>
+                </ol>
+            </div>
+
+            <div class="visible-xs col-xs-2"></div> <!-- Do not touch-->
+
+            <div class="col-xs-5 col-sm-3 col-md-2 col-lg-2">
+                <h4>MY ACCOUNT</h4>
+                <ol class="list-unstyled">
+                    <li><a href="#">Past Orders</a></li>
+                    <li><a href="#">Edit Profile</a></li>
+                    <li><a href="#">Wishlist</a></li>
+                    <li><a href="#">Create New Account</a></li>
+                </ol>
+            </div>
+
+            <div class="col-sm-1 col-md-2 col-md-offset-1 col-lg-2">
+            </div>
+
+         </div>
+
+    </div>
+
+        <script src="Scripts/jquery-2.1.1.js"></script>
+        <script src="Scripts/bootstrap.js"></script>
+   
+        </form>
+   
+</body>
+</html>
